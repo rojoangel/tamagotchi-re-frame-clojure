@@ -17,4 +17,5 @@
        [:button {:on-click #(re-frame/dispatch [:feed])} "Feed"]
        [:button {:on-click #(re-frame/dispatch [:poo])} "Poo"]
        [:button {:on-click #(re-frame/dispatch [:bed])} "Bed"]
+       [:button {:on-click #(re-frame/dispatch [:play])} "Play"]
        ])))

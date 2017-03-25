@@ -28,6 +28,11 @@
   (fn  [db _]
     (logic/put-to-bed db)))
 
+(re-frame/reg-event-db
+  :play
+  (fn  [db _]
+    (logic/play db)))
+
 (defn dispatch-timer-event []
   (re-frame/dispatch [:tic]))
 
