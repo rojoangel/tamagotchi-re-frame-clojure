@@ -13,6 +13,11 @@
   (fn  [db _]
     (logic/tic db)))
 
+(re-frame/reg-event-db
+  :feed
+  (fn  [db _]
+    (logic/feed db)))
+
 (defn dispatch-timer-event []
   (re-frame/dispatch [:tic]))
 
