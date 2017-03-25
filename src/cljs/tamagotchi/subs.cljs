@@ -6,3 +6,8 @@
  :name
  (fn [db]
    (:name db)))
+
+(re-frame/reg-sub
+  :hungriness
+  (fn [db]
+    (:hungriness db)))
