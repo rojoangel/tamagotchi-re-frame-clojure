@@ -16,3 +16,8 @@
   :fullness
   (fn [db]
     (:fullness db)))
+
+(re-frame/reg-sub
+  :happiness
+  (fn [db]
+    (:happiness db)))
