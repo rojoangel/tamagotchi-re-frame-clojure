@@ -15,4 +15,5 @@
        [:div "happiness: " @happiness]
        [:div "tiredness: " @tiredness]
        [:button {:on-click #(re-frame/dispatch [:feed])} "Feed"]
+       [:button {:on-click #(re-frame/dispatch [:poo])} "Poo"]
        ])))

@@ -18,6 +18,11 @@
   (fn  [db _]
     (logic/feed db)))
 
+(re-frame/reg-event-db
+  :poo
+  (fn  [db _]
+    (logic/make-poop db)))
+
 (defn dispatch-timer-event []
   (re-frame/dispatch [:tic]))
 
