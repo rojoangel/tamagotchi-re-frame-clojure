@@ -11,3 +11,8 @@
   :hungriness
   (fn [db]
     (:hungriness db)))
+
+(re-frame/reg-sub
+  :fullness
+  (fn [db]
+    (:fullness db)))

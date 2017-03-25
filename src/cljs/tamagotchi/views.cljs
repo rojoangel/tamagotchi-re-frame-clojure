@@ -3,9 +3,11 @@
 
 (defn main-panel []
   (let [name (re-frame/subscribe [:name])
-        hungriness (re-frame/subscribe [:hungriness])]
+        hungriness (re-frame/subscribe [:hungriness])
+        fullness (re-frame/subscribe [:fullness])]
     (fn []
       [:div
        [:div "name: " @name]
        [:div "hungriness: " @hungriness]
+       [:div "fullness: " @fullness]
        ])))
