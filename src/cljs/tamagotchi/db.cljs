@@ -1,4 +1,5 @@
-(ns tamagotchi.db)
+(ns tamagotchi.db
+  (:require [tamagotchi.logic :as logic]))
 
 (def default-db
-  {:name "re-xxxx"})
+  (logic/create))
