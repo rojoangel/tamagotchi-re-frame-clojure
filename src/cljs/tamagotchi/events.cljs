@@ -23,6 +23,11 @@
   (fn  [db _]
     (logic/make-poop db)))
 
+(re-frame/reg-event-db
+  :bed
+  (fn  [db _]
+    (logic/put-to-bed db)))
+
 (defn dispatch-timer-event []
   (re-frame/dispatch [:tic]))
 

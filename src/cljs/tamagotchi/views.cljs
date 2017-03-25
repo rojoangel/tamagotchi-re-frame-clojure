@@ -16,4 +16,5 @@
        [:div "tiredness: " @tiredness]
        [:button {:on-click #(re-frame/dispatch [:feed])} "Feed"]
        [:button {:on-click #(re-frame/dispatch [:poo])} "Poo"]
+       [:button {:on-click #(re-frame/dispatch [:bed])} "Bed"]
        ])))
