@@ -21,3 +21,8 @@
   :happiness
   (fn [db]
     (:happiness db)))
+
+(re-frame/reg-sub
+  :tiredness
+  (fn [db]
+    (:tiredness db)))
