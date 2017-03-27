@@ -6,8 +6,7 @@
         hungriness (re-frame/subscribe [:hungriness])
         fullness (re-frame/subscribe [:fullness])
         happiness (re-frame/subscribe [:happiness])
-        tiredness (re-frame/subscribe [:tiredness])
-        happiness-color (re-frame/subscribe [:happiness-color])]
+        tiredness (re-frame/subscribe [:tiredness])]
     (fn []
       [:div
        [:div "name: " @name]
