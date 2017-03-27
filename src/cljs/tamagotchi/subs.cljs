@@ -1,6 +1,7 @@
 (ns tamagotchi.subs
     (:require-macros [reagent.ratom :refer [reaction]])
-    (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as re-frame]
+            [tamagotchi.logic :as logic]))
 
 (re-frame/reg-sub
  :name
@@ -14,8 +15,14 @@
 
 (re-frame/reg-sub
   :hungriness-color
-  (fn [db]
-    (:hungriness-color db)))
+  (fn [query-v _]
+    (re-frame/subscribe [:hungriness]))
+  (fn [hungriness]
+    (if (> hungriness (* logic/max-attribute-value 0.9))
+      "#ff0000"                                             ; red
+      (if (> hungriness (* logic/max-attribute-value 0.75))
+        "#ff9d00"                                           ; orange
+        "#00ff00"))))                                       ; green
 
 (re-frame/reg-sub
   :fullness
@@ -24,8 +31,14 @@
 
 (re-frame/reg-sub
   :fullness-color
-  (fn [db]
-    (:fullness-color db)))
+  (fn [query-v _]
+    (re-frame/subscribe [:fullness]))
+  (fn [fullness]
+    (if (> fullness (* logic/max-attribute-value 0.9))
+      "#ff0000"                                             ; red
+      (if (> fullness (* logic/max-attribute-value 0.75))
+        "#ff9d00"                                           ; orange
+        "#00ff00"))))                                       ; green
 
 (re-frame/reg-sub
   :happiness
@@ -34,8 +47,14 @@
 
 (re-frame/reg-sub
   :happiness-color
-  (fn [db]
-    (:happiness-color db)))
+  (fn [query-v _]
+    (re-frame/subscribe [:happiness]))
+  (fn [happiness]
+    (if (< happiness (* logic/max-attribute-value 0.1))
+      "#ff0000"                                             ; red
+      (if (< happiness (* logic/max-attribute-value 0.25))
+        "#ff9d00"                                           ; orange
+        "#00ff00"))))                                       ; green
 
 (re-frame/reg-sub
   :tiredness
@@ -44,5 +63,11 @@
 
 (re-frame/reg-sub
   :tiredness-color
-  (fn [db]
-    (:tiredness-color db)))
+  (fn [query-v _]
+    (re-frame/subscribe [:tiredness]))
+  (fn [tiredness]
+    (if (> tiredness (* logic/max-attribute-value 0.9))
+      "#ff0000"                                             ; red
+      (if (> tiredness (* logic/max-attribute-value 0.75))
+        "#ff9d00"                                           ; orange
+        "#00ff00"))))                                       ; green
