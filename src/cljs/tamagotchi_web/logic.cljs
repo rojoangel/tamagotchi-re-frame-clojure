@@ -1,4 +1,4 @@
-(ns tamagotchi.logic)
+(ns tamagotchi-web.logic)
 
 (def default-initial-attribute-value 50)
 (def min-attribute-value 0)

@@ -1,10 +1,10 @@
-(ns tamagotchi.core
+(ns tamagotchi-web.core
     (:require [reagent.core :as reagent]
               [re-frame.core :as re-frame]
-              [tamagotchi.events]
-              [tamagotchi.subs]
-              [tamagotchi.views :as views]
-              [tamagotchi.config :as config]))
+              [tamagotchi-web.events]
+              [tamagotchi-web.subs]
+              [tamagotchi-web.views :as views]
+              [tamagotchi-web.config :as config]))
 
 
 (defn dev-setup []

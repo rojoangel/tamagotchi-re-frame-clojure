@@ -1,7 +1,7 @@
-(ns tamagotchi.events
+(ns tamagotchi-web.events
   (:require [re-frame.core :as re-frame]
-            [tamagotchi.db :as db]
-            [tamagotchi.logic :as logic]))
+            [tamagotchi-web.db :as db]
+            [tamagotchi-web.logic :as logic]))
 
 (re-frame/reg-event-db
  :initialize-db

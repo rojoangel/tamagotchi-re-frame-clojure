@@ -1,8 +1,8 @@
-(ns tamagotchi.subs
+(ns tamagotchi-web.subs
   (:require-macros [reagent.ratom :refer [reaction]])
   (:require [re-frame.core :as re-frame]
-            [tamagotchi.logic :as logic]
-            [tamagotchi.color :as color]))
+            [tamagotchi-web.logic :as logic]
+            [tamagotchi-web.color :as color]))
 
 (re-frame/reg-sub
   :name

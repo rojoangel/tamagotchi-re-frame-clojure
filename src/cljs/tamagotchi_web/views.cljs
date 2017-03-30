@@ -1,4 +1,4 @@
-(ns tamagotchi.views
+(ns tamagotchi-web.views
   (:require [re-frame.core :as re-frame]))
 
 (defn main-panel []

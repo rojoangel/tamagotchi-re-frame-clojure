@@ -1,5 +1,5 @@
-(ns tamagotchi.color
-  (:require [tamagotchi.logic :as tamagotchi]))
+(ns tamagotchi-web.color
+  (:require [tamagotchi-web.logic :as tamagotchi]))
 
 (def color-map
   {:red "#ff0000"
