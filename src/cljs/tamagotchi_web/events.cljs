@@ -1,7 +1,7 @@
-(ns tamagotchi.events
+(ns tamagotchi-web.events
   (:require [re-frame.core :as re-frame]
-            [tamagotchi.db :as db]
-            [tamagotchi.logic :as logic]))
+            [tamagotchi-web.db :as db]
+            [tamagotchi.core :as tamagotchi]))
 
 (re-frame/reg-event-db
  :initialize-db
@@ -11,27 +11,27 @@
 (re-frame/reg-event-db
   :tic
   (fn  [db _]
-    (logic/tic db)))
+    (tamagotchi/tic db)))
 
 (re-frame/reg-event-db
   :feed
   (fn  [db _]
-    (logic/feed db)))
+    (tamagotchi/feed db)))
 
 (re-frame/reg-event-db
   :poo
   (fn  [db _]
-    (logic/make-poop db)))
+    (tamagotchi/make-poop db)))
 
 (re-frame/reg-event-db
   :bed
   (fn  [db _]
-    (logic/put-to-bed db)))
+    (tamagotchi/put-to-bed db)))
 
 (re-frame/reg-event-db
   :play
   (fn  [db _]
-    (logic/play db)))
+    (tamagotchi/play db)))
 
 (defn dispatch-timer-event []
   (re-frame/dispatch [:tic]))

@@ -1,8 +1,9 @@
-(defproject tamagotchi "0.1.0-SNAPSHOT"
+(defproject tamagotchi-web "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [reagent "0.6.0"]
-                 [re-frame "0.9.2"]]
+                 [re-frame "0.9.2"]
+                 [tamagotchi "0.0.1"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]]
 
@@ -25,8 +26,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "tamagotchi.core/mount-root"}
-     :compiler     {:main                 tamagotchi.core
+     :figwheel     {:on-jsload "tamagotchi-web.core/mount-root"}
+     :compiler     {:main                 tamagotchi-web.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
@@ -37,7 +38,7 @@
 
     {:id           "min"
      :source-paths ["src/cljs"]
-     :compiler     {:main            tamagotchi.core
+     :compiler     {:main            tamagotchi-web.core
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
