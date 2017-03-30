@@ -1,5 +1,5 @@
 (ns tamagotchi-web.db
-  (:require [tamagotchi-web.logic :as logic]))
+  (:require [tamagotchi.core :as tamagotchi]))
 
 (def default-db
-  (logic/create))
+  (tamagotchi/create))
