@@ -22,8 +22,8 @@
        [:div#tiredness
         [:div#tiredness-label {:style {:float "left"}} "tiredness: "]
         [:div#tiredness-value {:style {:color @(re-frame/subscribe [:tiredness-color])}} @tiredness]]
-       [:button {:on-click #(re-frame/dispatch [:feed])} "Feed"]
-       [:button {:on-click #(re-frame/dispatch [:poo])} "Poo"]
-       [:button {:on-click #(re-frame/dispatch [:bed])} "Bed"]
-       [:button {:on-click #(re-frame/dispatch [:play])} "Play"]
+       [:button {:on-click #(re-frame/dispatch [:feed]) :disabled @(re-frame/subscribe [:is-death?])} "Feed"]
+       [:button {:on-click #(re-frame/dispatch [:poo]) :disabled @(re-frame/subscribe [:is-death?])} "Poo"]
+       [:button {:on-click #(re-frame/dispatch [:bed]) :disabled @(re-frame/subscribe [:is-death?])} "Bed"]
+       [:button {:on-click #(re-frame/dispatch [:play]) :disabled @(re-frame/subscribe [:is-death?])} "Play"]
        ])))
