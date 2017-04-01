@@ -10,6 +10,7 @@
     (fn []
       [:div
        [:div "name: " @name]
+       [:img {:src "img/tamagotchi.gif" :height 42 }]
        [:div#hungriness
         [:div#hungriness-label {:style {:float "left"}} "hungriness: "]
         [:div#hungriness-value {:style {:color @(re-frame/subscribe [:hungriness-color])}} @hungriness]]
