@@ -6,11 +6,14 @@
         hungriness (re-frame/subscribe [:hungriness])
         fullness (re-frame/subscribe [:fullness])
         happiness (re-frame/subscribe [:happiness])
-        tiredness (re-frame/subscribe [:tiredness])]
+        tiredness (re-frame/subscribe [:tiredness])
+        is-death? (re-frame/subscribe [:is-death?])]
     (fn []
       [:div
        [:div "name: " @name]
-       [:img {:src "img/tamagotchi.gif" :height 42 }]
+       (if (not @is-death?)
+         [:img {:src "img/tamagotchi.gif" :height 42 }]
+         [:img {:src "img/rip.gif" :height 42 }])
        [:div#hungriness
         [:div#hungriness-label {:style {:float "left"}} "hungriness: "]
         [:div#hungriness-value {:style {:color @(re-frame/subscribe [:hungriness-color])}} @hungriness]]
@@ -23,8 +26,8 @@
        [:div#tiredness
         [:div#tiredness-label {:style {:float "left"}} "tiredness: "]
         [:div#tiredness-value {:style {:color @(re-frame/subscribe [:tiredness-color])}} @tiredness]]
-       [:button {:on-click #(re-frame/dispatch [:feed]) :disabled @(re-frame/subscribe [:is-death?])} "Feed"]
-       [:button {:on-click #(re-frame/dispatch [:poo]) :disabled @(re-frame/subscribe [:is-death?])} "Poo"]
-       [:button {:on-click #(re-frame/dispatch [:bed]) :disabled @(re-frame/subscribe [:is-death?])} "Bed"]
-       [:button {:on-click #(re-frame/dispatch [:play]) :disabled @(re-frame/subscribe [:is-death?])} "Play"]
+       [:button {:on-click #(re-frame/dispatch [:feed]) :disabled @is-death?} "Feed"]
+       [:button {:on-click #(re-frame/dispatch [:poo]) :disabled @is-death?} "Poo"]
+       [:button {:on-click #(re-frame/dispatch [:bed]) :disabled @is-death?} "Bed"]
+       [:button {:on-click #(re-frame/dispatch [:play]) :disabled @is-death?} "Play"]
        ])))
